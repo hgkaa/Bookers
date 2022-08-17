@@ -32,7 +32,7 @@ describe '投稿のテスト' do
           visit books_path
           Book.all.each_with_index do |book,i|
             j = i * 3
-            expect(page).to have_content/bookstitle
+            expect(page).to have_content book.title
             expect(page).to have_content book.body
             # Showリンク
             show_link = find_all('a')[j]
